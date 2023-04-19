@@ -24,3 +24,13 @@ _start:
  mov ecx, buffer
  mov edx, 30
  int 0x80
+
+ call strlen
+strlen:
+ imp [edi],0
+ jz function
+ inc eax
+ inc edi
+ jmp strlen
+ 
+ 
