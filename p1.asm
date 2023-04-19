@@ -24,3 +24,6 @@ _start:
  mov ecx, buffer
  mov edx, 30
  int 0x80
+
+
+si puedes agregar borras el comentario este
