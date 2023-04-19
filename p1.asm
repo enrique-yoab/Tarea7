@@ -25,5 +25,16 @@ _start:
  mov edx, 30
  int 0x80
 
+ call strlen            ;se llama a la función strlen
+ 
+strlen:
+ ; Se agrega strlen para obtener el tamaño de la cadena
+ imp [edi],0
+ jz function            ;salto a la función donde se guardara la frase invertida
+ inc eax
+ inc edi
+ jmp strlen
 
-si puedes agregar borras el comentario este
+
+
+Listo uwu
