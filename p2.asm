@@ -29,9 +29,9 @@ _start:
  mov ecx, 0
  mov eax, 0
  call strlen
- dec ebx
- call conversion
- mov edi, ebx
+ dec ebx              ;se decrementa una vez ya que al contar los caracter toma en cuenta el enter dado por le usuario y no se toma en cuenta
+ call conversion      ;esta funcion hace mayusculas a las minusculas
+ mov edi, ebx         ;este es el tamaño de la cadena dada por el usuario el cual se guardara en edi
 
  ;se imprime el mensaje en la terminal para ingresar la frase
  mov eax, 4
