@@ -64,14 +64,14 @@ strlen:
  jmp strlen  ;se salta a strlen para que se haga un bucle
 
 conversion:
- mov al, byte [esi]
- sub al, 32
- mov byte[esi], al
- inc esi
- inc ecx
- cmp ecx, ebx
- je salida
- jmp conversion
+ mov al, byte [esi]  ;se mueve al registro mas pequeño de eax el primer caracter
+ sub al, 32          ;se trasnforma en mayuscula la letra minuscula
+ mov byte[esi], al   ;se mueve el resultado a la variable donde se guardo la frase
+ inc esi             ;se incremente esi para recorrer la otra letra
+ inc ecx             ;se incrementa ecx ya que esta contando los caracteres
+ cmp ecx, ebx        ;cuando se compara ecx y llega al tamaño del arreglo se termina 
+ je salida           ;salta a la etiqueta salida
+ jmp conversion      ;se hace este salto para que se repita y valla recorriendo cada caracter de la cadena
 
 salida:
  ret
